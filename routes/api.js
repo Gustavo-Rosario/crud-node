@@ -1,10 +1,12 @@
+const Animal = require('../models/animal');
 const config = require('../config');
 
 module.exports = (app, express) => {
 
     const apiRouter = express.Router();
 
-    // Middleware de acesso por token (fake apenas para simular)
+	// Middleware de acesso por token (fake apenas para simular)
+	/*
     apiRouter.use( (req, res, next) => {
         const token = req.headers['x-access-token'];
         if(token){
@@ -30,7 +32,24 @@ module.exports = (app, express) => {
 		}
     });
 
-    apiRouter.get
+*/
+	// ROTAS
+    apiRouter.get('/animal', async (req, res) => {
+		try{
+			const animals = await Animal.find({});
+			res.json({
+				success: true,
+				animals
+			})
+		}catch(err){
+			console.log(err);
+			res.status(500).json({
+				success: false,
+				message: err.message
+			})
+		}
+		
+	});
     
 
     return apiRouter

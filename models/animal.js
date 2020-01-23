@@ -4,7 +4,7 @@ const AnimalSchema = new Schema({
     nome:   { type: String, required: true },
     peso:   { type: Number, required: true },
     idade:  { type: Number, reqiured: true },
-    tipo:   { type:  }
+    tipo:   { type: String, required: true }
 });
 
-module.exports = model('Animal', AnimalSchema);
+module.exports = model('Animal', AnimalSchema, 'animals');
