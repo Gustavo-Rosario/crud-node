@@ -1,0 +1,1 @@
+exports.objectHasValues = obj => Object.values(obj).filter( v => v ).length > 0;

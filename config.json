@@ -1,8 +1,9 @@
 {
     
-    "port": 3001,
+    "port": 3010,
     "database": "mongodb://userbov:abc123456@ds211829.mlab.com:11829/gmaster-sandbox",
     "superSecret": "I'm GMaster",
+    "noToken": false, 
     "auth": {
         "login": "lorem",
         "pwd": "ipsum"
