@@ -11,7 +11,6 @@ Para instalar e rodar a aplicação, tenha previamente instalado em sua máquina
 
 ## INSTALAÇÂO
 - Clone o projeto em uma nova pasta. Utilize a branch **master**;
-- Faça o download do arquivo **config.json** [aqui](http://google.com). Cole na pasta do projeto;
 - Instale o projeto com o comando:
     ```
     $ npm install
@@ -75,5 +74,66 @@ Nome | Tipo | Descrição
 ## Exemplos
 ```javascript
 // GET - 127.0.0.1:3001/api/animal
+// Retorno
+{
+    "success": true,
+    "data": [
+        {
+            "_id": "5e29bbe9d078ad634e3ceec7",
+            "nome": "Boi 1",
+            "peso": 130,
+            "idade": 10,
+            "tipo": "TIPO2",
+            "__v": 0
+        },
+        {
+            "_id": "5e29bd78bcbc17651ba890fb",
+            "nome": "Boi 2",
+            "peso": 200,
+            "idade": 28,
+            "tipo": "TIPO1",
+            "__v": 0
+        }
+    ]
+}
 
+// POST - 127.0.0.1:3001/api/animal
+// Corpo requisição
+{
+    "nome": "Boi 3",
+    "peso": 100,
+    "idade": 3,
+    "tipo": "TIPO1",
+}
+//Retorno
+{
+    "success": true,
+    "data": {
+        "_id": "5e29bbe9d078ad634e3ceec7",
+        "nome": "Boi 3",
+        "peso": 100,
+        "idade": 3,
+        "tipo": "TIPO1",
+        "__v": 0
+    }
+}
+
+
+// PUT - 127.0.0.1:3001/api/animal/5e29bbe9d078ad634e3ceec7
+// Corpo requisição
+{
+    "tipo": "TIPO3",
+}
+//Retorno
+{
+    "success": true,
+    "data": {
+        "_id": "5e29bbe9d078ad634e3ceec7",
+        "nome": "Boi 3",
+        "peso": 100,
+        "idade": 3,
+        "tipo": "TIPO3",
+        "__v": 0
+    }
+}
 ```
